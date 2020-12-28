@@ -28,10 +28,12 @@ class CustomAppBar extends StatelessWidget {
                   MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
-                        child: TextResponsive(
-                          "Films",
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
+                        child: TextResponsive("Films",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline4
+                                .copyWith(
+                                    decoration: TextDecoration.underline)),
                         onTap: () {},
                       )),
                   MouseRegion(
