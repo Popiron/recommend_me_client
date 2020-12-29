@@ -33,6 +33,8 @@ dependencies:
   google_fonts: ^1.1.1
   cached_network_image: ^2.5.0
   transparent_image: ^1.0.0
+  nice_button: ^0.1.7
+
 
 
 

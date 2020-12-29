@@ -5,14 +5,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:recommend_me/models/film.dart';
-import 'package:recommend_me/views/film_details.dart';
+import 'package:recommend_me/models/game.dart';
+import 'package:recommend_me/views/game_details.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class PreviewFilm extends StatelessWidget {
-  final Film film;
+class PreviewGame extends StatelessWidget {
+  final Game game;
 
-  PreviewFilm(this.film);
+  PreviewGame(this.game);
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +24,12 @@ class PreviewFilm extends StatelessWidget {
                 context: context,
                 builder: (context) => BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                    child: FilmDetails(film))),
+                    child: GameDetails(game))),
             child: Column(
               children: [
                 Container(
                     child: FadeInImage.memoryNetwork(
-                        image: film.poster,
+                        image: game.background_image,
                         placeholder: kTransparentImage,
                         fit: BoxFit.cover)),
                 ContainerResponsive(
@@ -37,11 +38,11 @@ class PreviewFilm extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                          film.title +
+                          game.title +
                               '\n' +
-                              film.genres +
+                              game.genres +
                               '\n' +
-                              film.release_date.substring(0, 4),
+                              game.release_date.substring(0, 4),
                           textAlign: TextAlign.center,
                           maxLines: 5,
                           overflow: TextOverflow.ellipsis,

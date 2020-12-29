@@ -60,7 +60,7 @@ class Rest {
   }
 
   static Future<List<Game>> getRelatedGames(int filmId) async {
-    var response = await http.get(_URL_GAMES + "/$filmId/related_games");
+    var response = await http.get(_URL_FILMS + "/$filmId/related_games");
     if (response.statusCode == 200) {
       var l = jsonDecode(response.body);
       List<Game> games = new List<Game>();
